@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copier et rediriger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Copier du texte et rediriger</h1>
+
+    <p id="texteAffiche"></p>
+
+    <button onclick="copierTexte()">Copier le texte</button>
+    <button onclick="rediriger()">Aller sur une autre page</button>
+
+    <script>
+        // Texte prédéfini
+        const texte = "wss://eagler-uil4.onrender.com";
+
+        // Affichage du texte sur la page
+        document.getElementById("texteAffiche").innerText = texte;
+
+        function copierTexte() {
+            navigator.clipboard.writeText(texte)
+                .then(() => alert("Texte copié !"))
+                .catch(err => alert("Erreur lors de la copie : " + err));
+        }
+
+        function rediriger() {
+            window.location.href = "https://eaglercraft.com/mc/1.12.2"; // Remplace par ton URL
+        }
+    </script>
+</body>
+</html>
